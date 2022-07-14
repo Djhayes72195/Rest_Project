@@ -1,0 +1,17 @@
+coverage
+flake8
+flake8-docstrings
+flake8-html
+lxml
+mypy
+pdoc3
+pep8-naming
+pyhamcrest
+pytest
+pytest-html
+tox
+flask
+flask-classful
+jinja2==3.0.*
+python-dotenv
+flask_wtf

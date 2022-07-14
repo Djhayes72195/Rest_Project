@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<h1>
+    Menu
+</h1>
+
+<p>
+    Welcome to That’s a Wrap! Our motto: be a star
+    - wrap things your way!
+</p>
+
+<h2>Wraps</h2>
+<ul>
+    {% for item in wraps %}
+    <div class="wraps">
+        <h3 class="name">{{ item.name }}</h3>
+        <div class="price">{{ "$%.2f"|format(item.price) }}</div>
+        <div class="calories">{{ item.calories }} calories</div>
+    </div>
+    {% endfor %}
+</ul>
+
+<h2>Drinks</h2>
+<ul>
+    {% for item in drinks %}
+    <div class="drinks">
+        <h3 class="name">{{ item[0].name }}</h3>
+        {% for i in item %}
+        <h4 class="size">{{i.size}}</h4>
+        <div class="price">{{ "$%.2f"|format(i.price) }}</div>
+        <div class="calories">{{ i.calories }} calories</div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</ul>
+
+<h2>Sides</h2>
+<ul>
+    {% for item in sides %}
+    <div class="sides">
+        <h3 class="name">{{ item[0].name }}</h3>
+        {% for i in item %}
+        <h4 class="size">{{i.size}}</h4>
+        <div class="price">{{ "$%.2f"|format(i.price) }}</div>
+        <div class="calories">{{ i.calories }} calories</div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</ul>
+
+<h2>Combos</h2>
+<p>
+    Any wrap, side and drink may be
+    combined for a combo discount of ${{ discount }}!
+</p>
+<ul>
+    {% for item in combos %}
+    <h3>{{ item.name }}</h3>
+    <div class="price">{{ "$%.2f"|format(item.price) }}</div>
+    <div class="calories">{{ item.calories }} calories</div>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Homepage</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/advancedsearch">Advanced Search</a></li>
+                <li><a href="/custom">Custom Items</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2022 That's a Wrap</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}New Custom item{% endblock %}
+
+{% block content %}
+
+<form action="/custom/new/" method="POST" novalidate>
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.name.label }}:
+            {% if form.name.errors %}
+                {{ form.name(class_="form-control is-invalid") }}
+                {% for error in form.name.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.name(class="form-control") }}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.price.label }}:
+            {% if form.price.errors %}
+                {{ form.price(class_="form-control is-invalid") }}
+                {% for error in form.price.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.price(class="form-control") }}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.calories.label }}:
+            {% if form.calories.errors %}
+                {{ form.calories(class_="form-control is-invalid") }}
+                {% for error in form.calories.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.calories(class="form-control") }}
+            {% endif %}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+</form>
+
+{% endblock %}

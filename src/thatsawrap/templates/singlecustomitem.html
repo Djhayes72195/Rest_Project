@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block content %}
+
+
+<div class="custom_item">
+    <h3 class="name">{{ item.name }}</h3>
+    <div class="price">{{ "$%.2f"|format(item.price) }}</div>
+    <div class="calories">{{ item.calories }} calories</div>
+    <li><a href="/custom/{{ id }}/edit">Edit</a></li>
+    <li><a href="/custom/{{ id }}/delete">Delete</a></li>
+</div>
+
+
+{% endblock %}

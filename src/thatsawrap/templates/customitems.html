@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Custom Items{% endblock %}
+
+{% block content %}
+<h1>
+    Custom Items
+</h1>
+<div>
+    <a href="/custom/new/">Create a New Custom Item</a>
+</div>
+<form action="/custom/save/" method="POST">
+    <button type="submit" class="btn btn-success">
+        Save
+    </button>
+<ul>
+    {% for item in items %}
+    <div class="custom_items">
+        <h3 class="name">{{ item.name }}</h3>
+        <div class="price">{{ "$%.2f"|format(item.price) }}</div>
+        <div class="calories">{{ item.calories }} calories</div>
+        <a href="/custom/{{ loop.index0 }}/">Change Item</a>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock %}
